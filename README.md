@@ -9,8 +9,7 @@ gem install sinatra aws-sdk
 git clone https://github.com/ajesler/sot-cloud-demo.git
 cd sot-cloud-demo
 
-# set the environment variables. You will need to get these.
-./env.sh
+# set the environment variables. You will need to get these and make sure they are available in your shell.
 
 ruby cloudifiable.rb
 
