@@ -38,3 +38,22 @@ git push heroku master
 
 heroku open
 ```
+
+If you enter your number, and click submit, you will get an internal server error.
+To find out why, we need to look at the Heroku logs. 
+`heroku log`
+
+If you scroll up, we can see that the failure is due to AWS complaining about missing credentials.
+
+To add the credentials:
+
+```bash
+heroku config:set aws_access_key=<access_key>
+heroku config:set aws_secret_key=<secret_key>
+heroku config:set sqs_queue_name=sotdemo
+```
+
+Now make sure they are set
+`heroku config`
+
+Now try submit your number again, and it should work.
