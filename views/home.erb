@@ -1,0 +1,25 @@
+<div class="offset4 span4">
+	<form action="/phonenumber" method="post" class="form-inline">
+		<fieldset>
+			<legend>What is your cell phone number?</legend>
+			<p>Please enter your phone number in international format.</p>
+			<p>To convert your number to international format, drop the first '<span class="text-muted">0</span>' and put <span class="text-danger">+64</span> at the start.</p>
+			<p>Eg <span class="text-muted">0</span><span class="text-primary">273233662</span> would be <span class="text-danger">+64</span><span class="text-primary">273233662</span></p>
+			<p class="text-muted"><span class="text-danger">+64</span> is New Zealand's international country code</p>
+			<div class="form-group">
+				<div class="col-lg-3">
+					<input type="text" name="number" class="form-control" placeholder="+64273233662">
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+			<p class="text-danger">Please only submit this form once.</p>
+		</fieldset>
+	</form>
+	<!--
+	<div>
+		<p class="text-muted">aws_access_key: <%= @aws_access_key %></p>
+		<p class="text-muted">aws_secret_key: <%= @aws_secret_key %></p>
+		<p class="text-muted">sqs_queue_name: <%= @sqs_queue_name %></p>
+	</div>
+	-->
+</div>
