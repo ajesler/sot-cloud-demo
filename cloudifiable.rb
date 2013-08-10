@@ -10,7 +10,9 @@ post '/phonenumber' do
 	# submit phone number to SQS
 	sqs = AWS::SQS.new( :access_key_id => ENV['aws_access_key'], :secret_access_key => ENV['aws_secret_key'])
 	q = sqs.queues.named(ENV['sqs_queue_name'])
-	q.send_message(params[:number])
+	
+	q_msg = "#{params[:number]}:#{params[:name]}"
+	q.send_message(q_msg)
 
 	erb :phonenumber
 end
