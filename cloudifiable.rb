@@ -3,10 +3,6 @@ require 'sinatra'
 require 'aws-sdk'
 
 get '/' do
-	@aws_access_key = ENV['aws_access_key']
-	@aws_secret_key = ENV['aws_secret_key']
-	@sqs_queue_name = ENV['sqs_queue_name']
-
 	erb :home
 end
 
@@ -17,4 +13,11 @@ post '/phonenumber' do
 	q.send_message(params[:number])
 
 	erb :phonenumber
+end
+
+get '/env' do
+	@aws_access_key = ENV['aws_access_key']
+	@aws_secret_key = ENV['aws_secret_key']
+	@sqs_queue_name = ENV['sqs_queue_name']
+	erb :env
 end
