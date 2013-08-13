@@ -1,0 +1,36 @@
+proxies
+=======
+
+RUBY GEMS
+=========
+SET HTTP_PROXY=http://%USER%:%PASSWORD%@%SERVER%:%PORT%
+SET HTTP_PROXY=http://wolfbyte:secret@pigsy:8080
+or 
+gem install -p http://proxy_ip:proxy_port rails
+
+
+GIT
+===
+git config --global http.proxy http://mydomain\\myusername:mypassword@myproxyserver:8080
+
+
+AWS-SDK
+=======
+# http://aws.amazon.com/releasenotes/Ruby/9162810565754481
+AWS.config(:proxy_uri => 'https://user:password@my.proxy:443/path?query')
+
+
+HEROKU
+======
+If you’re behind a firewall that requires use of a proxy to connect with external HTTP/HTTPS services, you can set the HTTP_PROXY or HTTPS_PROXY environment variables before running the heroku command.
+
+
+TWILIO
+======
+opts = {
+	:proxy_addr => nil,
+    :proxy_port => nil,
+    :proxy_user => nil,
+    :proxy_pass => nil,
+}
+client = Twilio::REST::Client.new account_sid, auth_token, opts
