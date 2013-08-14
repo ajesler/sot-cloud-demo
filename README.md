@@ -3,7 +3,7 @@ sot-cloud-demo
 
 ```bash
 # assumes ruby 1.9.3 is installed and available
-gem install sinatra aws-sdk
+gem install sinatra aws-sdk heroku
 
 git clone https://github.com/ajesler/sot-cloud-demo.git
 cd sot-cloud-demo
@@ -24,9 +24,6 @@ To check the environment variables have been set correctly on the local machine,
 Sign up for an account at heroku.com
 
 ```bash
-# download the heroku toolbelt
-wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-
 # make sure you are in the sot-cloud-demo directory
 
 heroku login
@@ -41,7 +38,7 @@ heroku open
 
 If you enter your number, and click submit, you will get an internal server error.
 To find out why, we need to look at the Heroku logs. 
-`heroku log`
+`heroku logs`
 
 If you scroll up, we can see that the failure is due to AWS complaining about missing credentials.
 
