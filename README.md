@@ -1,25 +1,32 @@
 sot-cloud-demo
 ==============
 
+This demo assumes you are on a unix machine, with ruby 1.9.3 and git installed. 
+May work with other versions of ruby, but untested.
+
 ```bash
-# assumes ruby 1.9.3 is installed and available
+# you may have to sudo the following line, depending on your ruby configuration.
 gem install sinatra aws-sdk heroku
 
 git clone https://github.com/ajesler/sot-cloud-demo.git
 cd sot-cloud-demo
 
 # set the environment variables. You will need to get these and make sure they are available in your shell.
+# assumes the following are available
+export aws_access_key=XXXXXXXXXXXXXXXXXXXX
+export aws_secret_key=XXXXXXXXXXXXXXXXXXXXXXXXX
+export sqs_queue_name=sotdemo
 
 ruby cloudifiable.rb
-
-Point your browser to http://localhost:4567
-
 ```
+Now point your browser to http://localhost:4567
+
 
 To check the environment variables have been set correctly on the local machine, visit localhost:4567/env and make sure each variable has a value.
 
 
-=== Heroku Deploy
+Heroku Deploy
+---
 
 Sign up for an account at heroku.com
 
